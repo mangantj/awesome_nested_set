@@ -11,9 +11,9 @@ module CollectiveIdea
           # Also very useful for converting from acts_as_tree.
           def rebuild!(validate_nodes = true)
             # default_scope with order may break database queries so we do all operation without scope
-            unscoped do
+            # unscoped do
               Tree.new(self, validate_nodes).rebuild!
-            end
+            # end
           end
 
           def scope_for_rebuild
